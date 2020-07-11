@@ -1,0 +1,8 @@
+ul {
+    -webkit-column-count: 3;
+    /* Chrome/Opera, Safari */
+    -moz-column-count: 3;
+    /* Mozilla Firefox */
+    column-count: 3;
+    list-style-type: none;
+}
