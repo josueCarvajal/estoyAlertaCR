@@ -6,3 +6,9 @@ ul {
     column-count: 3;
     list-style-type: none;
 }
+
+.circular--square {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
