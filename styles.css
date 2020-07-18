@@ -1,9 +1,10 @@
 ul {
-    -webkit-column-count: 3;
+    -webkit-column-count: auto;
     /* Chrome/Opera, Safari */
-    -moz-column-count: 3;
+    -moz-column-count: auto;
     /* Mozilla Firefox */
-    column-count: 3;
+    column-count: auto;
+    column-width: 8rem;
     list-style-type: none;
 }
 
