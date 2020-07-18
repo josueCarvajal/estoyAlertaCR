@@ -1,84 +1,4 @@
-//get the information of the given province
-function getDataByProvince(myData, province_id, resultDivName) {
-    for (let index = 0; index < myData.length; index++) {
-        const element = myData[index];
-        if (element.id === province_id) {
-            renderData(element, resultDivName)
-                //alert(element.provincia)
-        }
-    }
-}
-
-//Will render all the information in the index.html
-function renderData(element, resultDivName) {
-    clearScreen(resultDivName)
-        //title
-    createTitleElement(element.provincia, resultDivName)
-        //list container
-    createResultContainer(resultDivName)
-        //list
-    createULElement("list-container")
-        //list of elements
-    createListElement(element.alerta.naranja, "my-list")
-
-}
-
-//Function that creates a tittle node ready to append
-// @param text The text that the tittle node will show
-// @param appentTo The id of the element to append
-function createTitleElement(text, appendTo) {
-    let title = document.createElement("h1")
-    let title_text = document.createTextNode(text)
-    title.classList.add("text-center");
-    title.classList.add("mb-3");
-    title.appendChild(title_text)
-    document.getElementById(appendTo).appendChild(title)
-}
-//create a div container for the given element
-// @param element_id element id of the parent node
-function createResultContainer(element_id) {
-    let container = document.createElement("div")
-    container.classList.add("container");
-    container.setAttribute("id", "list-container");
-    document.getElementById(element_id).appendChild(container)
-}
-
-function createULElement(appendTo) {
-    let masterList = document.createElement("UL")
-    masterList.classList.add("col-12");
-    masterList.setAttribute("id", "my-list");
-    document.getElementById(appendTo).appendChild(masterList)
-}
-//Function that creates a list node of elements ready to append
-// @param elementList It is the root of the child element list
-// @param appentTo The id of the element to append
-function createListElement(elementList, appendTo) {
-    //content
-    for (let index = 0; index < elementList.length; index++) {
-        const result = elementList[index];
-        //lists
-        let list_gam = document.createElement("LI")
-        let list_nogam = document.createElement("LI")
-        let canton_name = document.createTextNode(result.canton)
-        if (result.gam === true) {
-            list_gam.setAttribute("style", "color:orange");
-            list_gam.appendChild(canton_name)
-            document.getElementById(appendTo).appendChild(list_gam)
-        } else {
-            list_nogam.appendChild(canton_name)
-            document.getElementById(appendTo).appendChild(list_nogam)
-        }
-    }
-}
-
-//simple function to clear the added content on screen
-function clearScreen(resultDivName) {
-    const resultsNode = document.getElementById(resultDivName);
-    while (resultsNode.firstChild) {
-        resultsNode.firstChild.remove();
-    }
-}
-//this DATA will be updated every day. 
+//from July 10 to July 19
 DATA = [{
         "id": 1,
         "provincia": "San José",
@@ -205,8 +125,6 @@ DATA = [{
         "actualizado": "10/07/2020"
     }
 ]
-
-
 
 //From July 20 to July 31
 DATA2 = [{
