@@ -11,7 +11,9 @@ function getDataByProvince(myData, province_id, resultDivName) {
 
 //Will render all the information in the index.html
 function renderData(element, resultDivName) {
-    clearScreen(resultDivName)
+    //clear both screens to avoid issues with the two results div
+    clearScreen("results")
+    clearScreen("results2")
         //title
     createTitleElement(element.provincia, resultDivName)
         //list container
