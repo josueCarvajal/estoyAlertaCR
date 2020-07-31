@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" href="./imgs/warning-icon.png">
+    <title>Estoy Alerta CR</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <hr>
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1><strong>Estoy alerta CR</strong> </h1>
+            </div>
+        </div>
+        <div class="col-3 col-sm-2 offset-3 offset-sm-5">
+            <img src="./imgs/map2.png" alt="CR">
+        </div>
+
+        <!--Title of the body-->
+        <div class="col-12 text-center">
+            <h3>¿Desea conocer los cantones afectados?</h3>
+            <p>Seleccione el margen<strong> de fecha</strong> que desea conocer</p>
+        </div>
+
+
+        <!--Start accordion-->
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-info " data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Zonas afectadas (Julio 10 - Julio 19)
+                  </button>
+                    </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <!--Content of first week here-->
+                        <div class="col-12 text-center">
+                            <h2>10 de Julio al 19 de Julio</h2>
+                            <p class="mt-4">La información detallada corresponde a las medidas válidas del <strong>lunes 10 de Julio al domingo 19 de Julio</strong></p>
+                            <small class="mt-3">Los cantones resaltados de color naranja pertenecen al GAM</small> <br>
+                            <div class="dropdown mt-3">
+                                <button class="btn btn-success dropdown-toggle btn-lg" type="button" data-toggle="dropdown">
+                      Seleccione una provincia
+                    </button>
+                                <div class="dropdown-menu">
+                                    <button class="dropdown-item" onClick="getDataByProvince(DATA,1,'results')">San José</button>
+                                    <button class="dropdown-item" onClick="getDataByProvince(DATA,2,'results')">Alajuela</button>
+                                    <button class="dropdown-item" onClick="getDataByProvince(DATA,3,'results')">Heredia</button>
+                                    <button class="dropdown-item" onClick="getDataByProvince(DATA,4,'results')">Cartago</button>
+                                    <button class="dropdown-item" onClick="getDataByProvince(DATA,5,'results')">Guanacaste</button>
+                                    <button class="dropdown-item" onClick="getDataByProvince(DATA,6,'results')">Puntarenas</button>
+                                    <button class="dropdown-item" onClick="getDataByProvince(DATA,7,'results')">Limón</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <!--Will hold all the results-->
+                        <div class="container " id="results">
+
+                        </div>
+
+                        <!--What can we do?-->
+                        <div class="col-12 text-center mt-5">
+                            <h3>¿Qué puedo hacer si estoy en una zona con <strong style="color: orange;"> alerta naranja</strong>?</h3>
+                        </div>
+
+                        <div class="container text-center mt-5">
+                            <p class="mb-5"><strong>Lunes a viernes y fines de semana.</strong> <br>Sólo se podrá circular a los supermecados, farmacias y centros de salud <br> Habilitados de 5am - 5pm </p>
+                            <div class="row">
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/doctor.png" alt="CR">
+                                    <p>Centros de salud</p>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/Market.png" alt="CR">
+                                    <p>Supermercados</p>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/Pharmacy.png" alt="CR">
+                                    <p>Farmacias</p>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/Bread.png" alt="CR">
+                                    <p>Panaderías</p>
+
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/Funeral.png" alt="CR">
+                                    <p>Funerarias</p>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/Express.png" alt="CR">
+                                    <p>Servicio Exprés</p>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/agricultor.png" alt="CR">
+                                    <p>Ferias del agricultor</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 text-center mt-5">
+                            <h3>¿Qué puedo hacer si estoy en una zona con<strong style="color: yellowgreen;"> alerta amarilla</strong> (resto del país)?</h3>
+                            <p class="mb-5 mt-5"><strong>Lunes a viernes.</strong> <br> Habilitados 5am - 7pm</p>
+                            <div class="row">
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/hotels.png" alt="CR">
+                                    <p>Hoteles 50% de su capacidad</p>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/Church.png" alt="CR">
+                                    <p>Iglesias (lugares de culto)</p>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/Restaurant.png" alt="CR">
+                                    <p>Restaurantes</p>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/store.png" alt="CR">
+                                    <p>Tiendas</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 text-center mt-5">
+                            <p class="mb-5 mt-5"><strong>Fines de semana</strong> <br> Habilitados 5am - 5pm </p>
+                            <div class="row">
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/hotels.png" alt="CR">
+                                    <p>Hoteles 50% de su capacidad</p>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/Church.png" alt="CR">
+                                    <p>Iglesias</p>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/Restaurant.png" alt="CR">
+                                    <p>Restaurantes</p>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/store.png" alt="CR">
+                                    <p>Tiendas</p>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/teatros.png" alt="CR">
+                                    <p>Museos, teatros, cines al 50% de su capacidad</p>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/beach.png" alt="CR">
+                                    <p>Playas en horario de 5am a 9:30am</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-success collapsed btn-lg" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                            Zonas afectadas (Julio 20 - Julio 31)
+                  </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        <!--Content of second week here-->
+
+                        <div class="col-12 text-center">
+                            <h2>20 de Julio al 31 de Julio</h2>
+                            <p class="mt-4">La información detallada corresponde a las medidas válidas del <strong>lunes 20 de Julio al viernes 31 de Julio</strong></p>
+                            <small class="mt-3">Los cantones resaltados de color naranja pertenecen al GAM</small> <br>
+                            <div class="dropdown mt-3">
+                                <button class="btn btn-success dropdown-toggle btn-lg" type="button" data-toggle="dropdown">
+                                              Seleccione una provincia
+                                            </button>
+                                <div class="dropdown-menu">
+                                    <button class="dropdown-item" onClick="getDataByProvince(DATA2,1,'results2')">San José</button>
+                                    <button class="dropdown-item" onClick="getDataByProvince(DATA2,2,'results2')">Alajuela</button>
+                                    <button class="dropdown-item" onClick="getDataByProvince(DATA2,3,'results2')">Heredia</button>
+                                    <button class="dropdown-item" onClick="getDataByProvince(DATA2,4,'results2')">Cartago</button>
+                                    <button class="dropdown-item" onClick="getDataByProvince(DATA2,5,'results2')">Guanacaste</button>
+                                    <button class="dropdown-item" onClick="getDataByProvince(DATA2,6,'results2')">Puntarenas</button>
+                                    <button class="dropdown-item" onClick="getDataByProvince(DATA2,7,'results2')">Limón</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Will hold all the results-->
+                        <div class="container mt-3" id="results2">
+
+                        </div>
+
+                        <hr>
+
+                        <!--What can we do on orange?-->
+                        <div class="col-12 text-center mt-5">
+                            <h3>¿Qué puedo hacer si estoy en una zona con <strong style="color: orange;"> alerta naranja</strong>?</h3>
+                        </div>
+
+                        <div class="container text-center mt-5">
+                            <p class="mb-5"><strong>Lunes a viernes y fines de semana.</strong> <br>Sólo se podrá circular a los supermecados, farmacias y centros de salud <br> Habilitados de 5am - 5pm </p>
+                            <div class="row">
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/doctor.png" alt="CR">
+                                    <p>Centros de salud</p>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/Market.png" alt="CR">
+                                    <p>Supermercados</p>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/Pharmacy.png" alt="CR">
+                                    <p>Farmacias</p>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/Bread.png" alt="CR">
+                                    <p>Panaderías</p>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/Funeral.png" alt="CR">
+                                    <p>Funerarias</p>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/orange_hardwarestore.png" alt="CR">
+                                    <p>Ferreterías</p>
+                                </div>
+
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/Express.png" alt="CR">
+                                    <p>Servicio Exprés</p>
+                                </div>
+
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/orange_bank.png" alt="CR">
+                                    <p>Bancos</p>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/agricultor.png" alt="CR">
+                                    <p>Ferias del agricultor</p>
+                                </div>
+
+                                <div class="col-6 col-md-4">
+                                    <img class="circular--square" src="./imgs/orange_hotel.png" alt="CR">
+                                    <p>Hoteles</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--What can we do in yellow-->
+                        <div class="col-12 text-center mt-5">
+                            <h3>¿Qué puedo hacer si estoy en una zona con<strong style="color: yellowgreen;"> alerta amarilla</strong> (resto del país)?</h3>
+                            <p class="mb-5 mt-5"><strong>Los establecimientos en zona amarilla con permiso sanitario de funcionamiento de atención al público
+                                podrán abrir de manera regular y continuar la fase III de reapertura de lunes a domingo, excluyendo bares, discotecas, casinos y parques públicos.</strong> <br></p>
+
+
+                            <div class="col-12 text-center mt-5">
+                                <div class="row">
+                                    <div class="col-6 col-md-4">
+                                        <img class="circular--square" src="./imgs/hotels.png" alt="CR">
+                                        <p>Hoteles*</p>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <img class="circular--square" src="./imgs/Church.png" alt="CR">
+                                        <p>Iglesias**</p>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <img class="circular--square" src="./imgs/Restaurant.png" alt="CR">
+                                        <p>Restaurantes***</p>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <img class="circular--square" src="./imgs/store.png" alt="CR">
+                                        <p>Tiendas***</p>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <img class="circular--square" src="./imgs/teatros.png" alt="CR">
+                                        <p>Museos, teatros, cines***</p>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <img class="circular--square" src="./imgs/beach.png" alt="CR">
+                                        <p>Playas en horario de 5am a 9:30am</p>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <img class="circular--square" src="./imgs/yellow_gym.png" alt="CR">
+                                        <p>Gimnasios***</p>
+                                    </div>
+                                </div>
+                                <small>* Hoteles un aforo del 100% y en áreas comunes 50% de su máxima capacidad</small> <br>
+                                <small>** Lugares de culto con un máximo de 75 personas</small> <br>
+                                <small>*** A un 50 % de su capacidad</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End accordion-->
+
+        <hr>
+
+        <!--Collegues-->
+        <div class="row">
+            <div class="col-12 text-center mt-5">
+                <h3>¿Deseas conocer la restricción vehicular?</h3>
+                <p>En Costa Rica trabajamos unidos, visita <a href="https://larestriccion.com">larestriccion.com</a></p>
+                <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://estoyalertacr.com"><img src="./imgs/fb_share.png" border=0 width=200 height=50 /></a>
+            </div>
+        </div>
+
+        <!--Source of our information-->
+        <hr class="mt-5">
+        <div class="row">
+            <div class="col-12 text-center mt-5">
+                <h3>Sitio oficial de la información.</h3>
+                <br>
+                <small>Ministerio De Salud <a href="https://www.ministeriodesalud.go.cr/index.php/centro-de-prensa/noticias/741-noticias-2020/1805-gobierno-anuncia-nuevas-medidas-para-contener-eficazmente-el-covid-19?fbclid=IwAR2AkIQ-QgHrbHs5bsNRdHuLN1ZjdPa4g8h1BFhN5wO9JW0WapF8WvtGWxM">Restricciones Julio 20 a Julio 31 - 2020</a> </small>
+                <br>
+                <small>Ministerio De Salud <a href="https://www.ministeriodesalud.go.cr/index.php/centro-de-prensa/noticias/741-noticias-2020/1788-autoridades-instruyen-cerco">Restricciones Julio 10 a Julio 19 - 2020</a> </small>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--Collegues-->
+    <hr>
+    <div class="row">
+        <div class="col-12 text-center mt-5">
+            <h3>Sitios hermanos</h3>
+            <div class="row mt-2">
+                <div class="col-12">
+                    <a href="https://dogsnroll.com" target="_blank">
+                        <img src="./imgs/dogsnroll.png" width="100" height="100">
+                    </a>
+                    <p>Dogs N Roll</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <!--Bootstrap dependencies-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+<footer>
+    <hr>
+
+</footer>
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <small>Made with ❤️ by <a target="_blank" href="https://www.linkedin.com/in/josuecarvajal97/">Josué Carvajal Salas</a></small>
+        </div>
+    </div>
+</div>
+
+</html>

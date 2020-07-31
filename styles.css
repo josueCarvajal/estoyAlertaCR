@@ -13,3 +13,17 @@ ul {
     width: 70px;
     height: 70px;
 }
+
+.apertura {
+    background-color: green;
+    color: white;
+}
+
+.dias {
+    background-color: gainsboro;
+}
+
+.cierre {
+    background-color: darkred;
+    color: white;
+}
