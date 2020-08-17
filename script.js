@@ -94,11 +94,11 @@ DATA = [{
                 { "canton": "Goicoechea", "gam": true },
                 { "canton": "Santa Ana", "gam": true },
                 { "canton": "Alajuelita", "gam": true },
-                { "canton": "Vásquez de Coronado", "gam": true },
                 { "canton": "Tibás", "gam": true },
                 { "canton": "Moravia", "gam": true },
                 { "canton": "Montes de Oca", "gam": true },
-                { "canton": "Curridabat", "gam": true }
+                { "canton": "Curridabat", "gam": true },
+                { "canton": "Puriscal", "gam": true }
             ]
         }
     },
@@ -107,8 +107,7 @@ DATA = [{
         "provincia": "Alajuela",
         "alerta": {
             "naranja": [
-                { "canton": "Alajuela", "gam": true },
-                { "canton": "Poás", "gam": true },
+                { "canton": "Alajuela (excepto el distrito Sarapiquí)", "gam": true },
                 { "canton": "Naranjo", "gam": true }
             ]
         }
@@ -118,13 +117,12 @@ DATA = [{
         "provincia": "Heredia",
         "alerta": {
             "naranja": [
-                { "canton": "Heredia", "gam": true },
-                { "canton": "Barva", "gam": true },
+                { "canton": "Heredia (distritos Heredia, Mercedes, San Francisco, Ulloa)", "gam": true },
                 { "canton": "Santo Domingo", "gam": true },
-                { "canton": "San Rafael", "gam": true },
                 { "canton": "San Isidro", "gam": true },
                 { "canton": "Flores", "gam": true },
-                { "canton": "San Pablo", "gam": true }
+                { "canton": "San Pablo", "gam": true },
+                { "canton": "Belén", "gam": true }
             ]
         }
     },
@@ -151,10 +149,8 @@ DATA = [{
         "provincia": "Puntarenas",
         "alerta": {
             "naranja": [
-                { "canton": "Corredores", "gam": false },
-                { "canton": "Coto Brus (distritos Agua Buena y Sabalito)", "gam": false },
-                { "canton": "Golfito (distrito Pavón)", "gam": false },
-                { "canton": "Puntarenas (distritos de Barranca y Chacarita)", "gam": false }
+                { "canton": "Corredores (distritos Canoas, La Cuesta, Laurel)", "gam": false },
+                { "canton": "Parrita", "gam": false }
 
             ]
         }
